@@ -1,18 +1,18 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Index - Gp Bootstrap Template',
+  title: 'Jenish Studio',
   description: '',
   keywords: '',
   icons: {
-    icon: '/assets/img/favicon.png',
+    icon: '/assets/img/logo-01.png',
     apple: '/assets/img/apple-touch-icon.png',
   },
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
         <link href="/assets/css/main.css" rel="stylesheet" />
       </head>
-      <body className="index-page">
+      <body className="index-page" suppressHydrationWarning={true}>
         {children}
       </body>
     </html>
