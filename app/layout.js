@@ -1,4 +1,5 @@
 import './globals.css'
+import ImageProtection from './components/ImageProtection'
 
 export const metadata = {
   title: 'Jenish Studio',
@@ -24,7 +25,11 @@ export default function RootLayout({ children }) {
         <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
         <link href="/assets/css/main.css" rel="stylesheet" />
       </head>
-      <body className="index-page" suppressHydrationWarning={true}>
+      <body 
+        className="index-page" 
+        suppressHydrationWarning={true}
+      >
+        <ImageProtection />
         {children}
       </body>
     </html>

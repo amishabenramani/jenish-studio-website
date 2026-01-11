@@ -58,13 +58,13 @@ export default function Home() {
   useEffect(() => {
     // Array of 7 images from photos folder
     const images = [
-      '/assets/img/photos/109.jpg',
-      '/assets/img/photos/127.jpg',
-      '/assets/img/photos/69.jpg',
-      '/assets/img/photos/108.jpg',
-      '/assets/img/photos/87.jpg',
-      '/assets/img/photos/33.jpg',
-      '/assets/img/photos/73.jpg'
+      '/assets/img/Festival/109.jpg',
+      '/assets/img/Family/127.jpg',
+      '/assets/img/Baby/69.jpg',
+      '/assets/img/Baby/108.jpg',
+      '/assets/img/Baby/87.jpg',
+      '/assets/img/kids/33.jpg',
+      '/assets/img/Baby/73.jpg'
     ];
     
     let currentImageIndex = 0;
@@ -99,21 +99,22 @@ export default function Home() {
       <Script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" strategy="beforeInteractive" />
       <Script src="/assets/vendor/purecounter/purecounter_vanilla.js" strategy="beforeInteractive" />
       <Script src="/assets/vendor/php-email-form/validate.js" strategy="afterInteractive" />
-      <Script src="/assets/js/main.js" strategy="lazyOnload" />
+      <Script src="/assets/js/main.js" strategy="afterInteractive" />
 
       <header id="header" className="header d-flex align-items-center fixed-top">
         <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
           <a href="/" className="logo d-flex align-items-center me-auto me-lg-0">
-            <img src="/assets/img/photos/logo-01.png" alt="Logo" />
+            <img src="/assets/img/logos/logo-01.png" alt="Logo" />
           </a>
           <nav id="navmenu" className="navmenu">
             <ul>
               <li><a href="#hero" className="active">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
-              <li><a href="#Gallery">Gallery</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+               <li><a href="#portfolio">Portfolio</a></li>
                <li><a href="#feedbacks">Feedbacks</a></li>
-               <li><a href="#recent-photos">Recent Photos</a></li>
+              
             </ul>
             <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
@@ -123,7 +124,7 @@ export default function Home() {
 
       <main className="main">
         <section id="hero" className="hero section dark-background">
-          <img ref={heroImageRef} src="/assets/img/photos/109.jpg" alt="" data-aos="fade-in" />
+          <img ref={heroImageRef} src="/assets/img/Festival/109.jpg" alt="" data-aos="fade-in" />
           <div className="container">
             <div className="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
               <div className="col-xl-6 col-lg-8">
@@ -143,7 +144,7 @@ export default function Home() {
           <div className="container" data-aos="fade-up" data-aos-delay="100">
             <div className="row gy-4">
               <div className="col-lg-6">
-                <img src="/assets/img/photos/14.jpg" className="img-fluid about-image" alt="" data-aos="fade-up" data-aos-delay="200" />
+                <img src="/assets/img/kids/14.jpg" className="img-fluid about-image" alt="" data-aos="fade-up" data-aos-delay="200" />
               </div>
               <div className="col-lg-6 content">
                 <h3 data-aos="fade-up" data-aos-delay="200">Our Story</h3>
@@ -198,7 +199,7 @@ export default function Home() {
               <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/72.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Baby/72.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -210,7 +211,7 @@ export default function Home() {
               <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/118.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/kids/118.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -222,7 +223,7 @@ export default function Home() {
               <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/132.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Family/132.jpg" className="img-fluid" alt="" />
                    
                   </div>
                   <div className="member-info">
@@ -234,7 +235,7 @@ export default function Home() {
               <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/128.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Wedding/128.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -246,7 +247,7 @@ export default function Home() {
                <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/38.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Festival/38.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -258,7 +259,7 @@ export default function Home() {
                <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/127.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Family/127.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -271,7 +272,7 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/129.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Model/129.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -284,7 +285,7 @@ export default function Home() {
   <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                 <div className="team-member">
                   <div className="member-img">
-                    <img src="/assets/img/photos/126.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Product/126.jpg" className="img-fluid" alt="" />
                   
                   </div>
                   <div className="member-info">
@@ -303,7 +304,7 @@ export default function Home() {
         
 
         <section id="call-to-action" className="call-to-action section dark-background">
-          <img src="/assets/img/photos/65.jpg" alt="" />
+          <img src="/assets/img/Baby/65.jpg" alt="" />
           <div className="container">
             <div className="row" data-aos="fade-up" data-aos-delay="100">
               <div className="col-xl-9">
@@ -317,9 +318,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="Gallery" className="portfolio section">
+        <section id="portfolio" className="portfolio section">
           <div className="container section-title" data-aos="fade-up">
-            <h2>Gallery</h2>
+            <h2>Portfolio</h2>
             <p>Timeless stories crafted in every frame.</p>
           </div>
           <div className="container">
@@ -334,67 +335,67 @@ export default function Home() {
               <div className="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                 <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                   <div className="portfolio-content h-100">
-                    <img src="/assets/img/photos/48.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Baby/48.jpg" className="img-fluid" alt="" />
                     <div className="portfolio-info">
                       <h4>Baby Photography</h4>
-                      <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="/assets/img/photos/48.jpg" title="Baby Photography" data-gallery="portfolio-gallery-app" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                      <a href="/portfolio-details" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
+                      <p>Capturing precious moments of your little ones</p>
+                      <a href="/assets/img/Baby/48.jpg" title="Baby Photography" data-gallery="portfolio-gallery-app" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
+                      <a href="/gallery" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                   <div className="portfolio-content h-100">
-                    <img src="/assets/img/photos/22.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Festival/22.jpg" className="img-fluid" alt="" />
                     <div className="portfolio-info">
                       <h4>Festival Photography</h4>
-                      <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="/assets/img/photos/74.jpg" title="Festival Photography" data-gallery="portfolio-gallery-product" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                      <a href="/portfolio-details" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
+                      <p>Celebrating cultural moments and festive joy</p>
+                      <a href="/assets/img/Baby/74.jpg" title="Festival Photography" data-gallery="portfolio-gallery-product" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
+                      <a href="/gallery" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                   <div className="portfolio-content h-100">
-                    <img src="/assets/img/photos/110.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Family/110.jpg" className="img-fluid" alt="" />
                     <div className="portfolio-info">
                       <h4>Family Photography</h4>
-                      <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="/assets/img/photos/110.jpg" title="Family Photography" data-gallery="portfolio-gallery-family" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                      <a href="/portfolio-details" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
+                      <p>Creating lasting memories of family bonds</p>
+                      <a href="/assets/img/Family/110.jpg" title="Family Photography" data-gallery="portfolio-gallery-family" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
+                      <a href="/gallery" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                   <div className="portfolio-content h-100">
-                    <img src="/assets/img/photos/118.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/kids/118.jpg" className="img-fluid" alt="" />
                     <div className="portfolio-info">
                       <h4>Kids Photography</h4>
-                      <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="/assets/img/photos/118.jpg" title="Kids Photography" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                      <a href="/portfolio-details" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
+                      <p>Capturing innocent smiles and playful moments</p>
+                      <a href="/assets/img/kids/118.jpg" title="Kids Photography" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
+                      <a href="/gallery" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
                     </div>
                   </div>
                 </div>
                  <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                   <div className="portfolio-content h-100">
-                    <img src="/assets/img/photos/33.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/kids/33.jpg" className="img-fluid" alt="" />
                     <div className="portfolio-info">
                       <h4>Kids Photography</h4>
-                      <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="/assets/img/photos/33.jpg" title="Kids Photography" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                      <a href="/portfolio-details" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
+                      <p>Freezing joyful childhood adventures</p>
+                      <a href="/assets/img/kids/33.jpg" title="Kids Photography" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
+                      <a href="/gallery" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
                     </div>
                   </div>
                 </div>
                  <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                   <div className="portfolio-content h-100">
-                    <img src="/assets/img/photos/98.jpg" className="img-fluid" alt="" />
+                    <img src="/assets/img/Baby/98.jpg" className="img-fluid" alt="" />
                     <div className="portfolio-info">
                       <h4>Kids Photography</h4>
-                      <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="/assets/img/photos/98.jpg" title="Kids Photography" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                      <a href="/portfolio-details" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
+                      <p>Documenting magical childhood expressions</p>
+                      <a href="/assets/img/Baby/98.jpg" title="Kids Photography" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
+                      <a href="/gallery" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -410,7 +411,7 @@ export default function Home() {
             <p>What our clients say about Jenish Studio</p>
           </div>
         <section id="feedbacks" className="testimonials section dark-background">
-          <img src="/assets/img/photos/106.jpg" className="testimonials-bg" alt="" />
+          <img src="/assets/img/Baby/106.jpg" className="testimonials-bg" alt="" />
           <div className="container" data-aos="fade-up" data-aos-delay="100">
             <div className="swiper init-swiper">
               <script type="application/json" className="swiper-config" dangerouslySetInnerHTML={{ __html: '{"loop":true,"speed":600,"autoplay":{"delay":5000},"slidesPerView":"auto","pagination":{"el":".swiper-pagination","type":"bullets","clickable":true}}' }} />
@@ -531,45 +532,45 @@ export default function Home() {
           <div className="container" data-aos="fade-up" data-aos-delay="100">
             <div className="continuous-scroll">
               <div className="scroll-content">
-                <img src="/assets/img/photos/4.jpg" alt="Recent Photo 4" />
-                <img src="/assets/img/photos/10.jpg" alt="Recent Photo 10" />
-                <img src="/assets/img/photos/16.jpg" alt="Recent Photo 16" />
-                <img src="/assets/img/photos/17.jpg" alt="Recent Photo 17" />
-                <img src="/assets/img/photos/18.jpg" alt="Recent Photo 18" />
-                <img src="/assets/img/photos/22.jpg" alt="Recent Photo 22" />
-                <img src="/assets/img/photos/33.jpg" alt="Recent Photo 33" />
-                <img src="/assets/img/photos/48.jpg" alt="Recent Photo 48" />
-                <img src="/assets/img/photos/49.jpg" alt="Recent Photo 49" />
-                <img src="/assets/img/photos/34.jpg" alt="Recent Photo 34" />
-                <img src="/assets/img/photos/44.jpg" alt="Recent Photo 44" />
-                <img src="/assets/img/photos/73.jpg" alt="Recent Photo 73" />
-                <img src="/assets/img/photos/69.jpg" alt="Recent Photo 69" />
-                <img src="/assets/img/photos/71.jpg" alt="Recent Photo 71" />
-                <img src="/assets/img/photos/85.jpg" alt="Recent Photo 85" />
-                <img src="/assets/img/photos/101.jpg" alt="Recent Photo 101" />
-                <img src="/assets/img/photos/113.jpg" alt="Recent Photo 113" />
-                <img src="/assets/img/photos/117.jpg" alt="Recent Photo 117" />
-                <img src="/assets/img/photos/108.jpg" alt="Recent Photo 108" />
-                <img src="/assets/img/photos/98.jpg" alt="Recent Photo 98" />
-                <img src="/assets/img/photos/122.jpg" alt="Recent Photo 122" />
-                <img src="/assets/img/photos/125.jpg" alt="Recent Photo 125" />
-                <img src="/assets/img/photos/63.jpg" alt="Recent Photo 63" />
-                <img src="/assets/img/photos/44.jpg" alt="Recent Photo 44" />
-                <img src="/assets/img/photos/97.jpg" alt="Recent Photo 97" />
-                <img src="/assets/img/photos/93.jpg" alt="Recent Photo 93" />
-                <img src="/assets/img/photos/79.jpg" alt="Recent Photo 79" />
-                <img src="/assets/img/photos/38.jpg" alt="Recent Photo 38" />
+                <img src="/assets/img/Baby/4.jpg" alt="Recent Photo 4" />
+                <img src="/assets/img/Baby/10.jpg" alt="Recent Photo 10" />
+                <img src="/assets/img/Baby/16.jpg" alt="Recent Photo 16" />
+                <img src="/assets/img/Baby/17.jpg" alt="Recent Photo 17" />
+                <img src="/assets/img/Festival/18.jpg" alt="Recent Photo 18" />
+                <img src="/assets/img/Festival/22.jpg" alt="Recent Photo 22" />
+                <img src="/assets/img/kids/33.jpg" alt="Recent Photo 33" />
+                <img src="/assets/img/Baby/48.jpg" alt="Recent Photo 48" />
+                <img src="/assets/img/Baby/49.jpg" alt="Recent Photo 49" />
+                <img src="/assets/img/Baby/34.jpg" alt="Recent Photo 34" />
+                <img src="/assets/img/Baby/44.jpg" alt="Recent Photo 44" />
+                <img src="/assets/img/Baby/73.jpg" alt="Recent Photo 73" />
+                <img src="/assets/img/Baby/69.jpg" alt="Recent Photo 69" />
+                <img src="/assets/img/Festival/71.jpg" alt="Recent Photo 71" />
+                <img src="/assets/img/Baby/85.jpg" alt="Recent Photo 85" />
+                <img src="/assets/img/Baby/101.jpg" alt="Recent Photo 101" />
+                <img src="/assets/img/Festival/113.jpg" alt="Recent Photo 113" />
+                <img src="/assets/img/Baby/117.jpg" alt="Recent Photo 117" />
+                <img src="/assets/img/Baby/108.jpg" alt="Recent Photo 108" />
+                <img src="/assets/img/Baby/98.jpg" alt="Recent Photo 98" />
+                <img src="/assets/img/Baby/122.jpg" alt="Recent Photo 122" />
+                <img src="/assets/img/Baby/125.jpg" alt="Recent Photo 125" />
+                <img src="/assets/img/Festival/63.jpg" alt="Recent Photo 63" />
+                <img src="/assets/img/Baby/44.jpg" alt="Recent Photo 44" />
+                <img src="/assets/img/Festival/97.jpg" alt="Recent Photo 97" />
+                <img src="/assets/img/Festival/93.jpg" alt="Recent Photo 93" />
+                <img src="/assets/img/Baby/79.jpg" alt="Recent Photo 79" />
+                <img src="/assets/img/Festival/38.jpg" alt="Recent Photo 38" />
                 {/* Duplicate first 10 images for seamless loop */}
-                <img src="/assets/img/photos/4.jpg" alt="Recent Photo 4" />
-                <img src="/assets/img/photos/10.jpg" alt="Recent Photo 10" />
-                <img src="/assets/img/photos/16.jpg" alt="Recent Photo 16" />
-                <img src="/assets/img/photos/17.jpg" alt="Recent Photo 17" />
-                <img src="/assets/img/photos/18.jpg" alt="Recent Photo 18" />
-                <img src="/assets/img/photos/22.jpg" alt="Recent Photo 22" />
-                <img src="/assets/img/photos/33.jpg" alt="Recent Photo 33" />
-                <img src="/assets/img/photos/48.jpg" alt="Recent Photo 48" />
-                <img src="/assets/img/photos/49.jpg" alt="Recent Photo 49" />
-                <img src="/assets/img/photos/34.jpg" alt="Recent Photo 34" />
+                <img src="/assets/img/Baby/4.jpg" alt="Recent Photo 4" />
+                <img src="/assets/img/Baby/10.jpg" alt="Recent Photo 10" />
+                <img src="/assets/img/Baby/16.jpg" alt="Recent Photo 16" />
+                <img src="/assets/img/Baby/17.jpg" alt="Recent Photo 17" />
+                <img src="/assets/img/Festival/18.jpg" alt="Recent Photo 18" />
+                <img src="/assets/img/Festival/22.jpg" alt="Recent Photo 22" />
+                <img src="/assets/img/kids/33.jpg" alt="Recent Photo 33" />
+                <img src="/assets/img/Baby/48.jpg" alt="Recent Photo 48" />
+                <img src="/assets/img/Baby/49.jpg" alt="Recent Photo 49" />
+                <img src="/assets/img/Baby/34.jpg" alt="Recent Photo 34" />
               </div>
             </div>
           </div>
@@ -674,7 +675,7 @@ export default function Home() {
           <div className="row gy-4">
             <div className="col-lg-4 col-md-6 footer-about">
               <a href="/" className="logo d-flex align-items-center">
-                <img src="/assets/img/photos/logo-01.png" alt="Jenish Studio Logo" />
+                <img src="/assets/img/logos/logo-01.png" alt="Jenish Studio Logo" />
               </a>
               <div className="footer-contact pt-3">
                 <p>Capturing life's precious moments with creativity and passion.</p>
@@ -689,6 +690,7 @@ export default function Home() {
                 <li><a href="#about">About us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="">Photos</a></li>
                 <li><a href="#feedbacks">Feedbacks</a></li>
                 <li><a href="#recent-photos">Recent Photos</a></li>
                 <li><a href="#contact">Contact</a></li>
