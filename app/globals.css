@@ -1,30 +1,76 @@
-/* Prevent image download and selection */
+/* =====================================================
+   SECURITY STYLES - Image & Content Protection
+   Place this file in: app/globals.css
+   ===================================================== */
+
+/* =====================================================
+   1. IMAGE PROTECTION - Prevent downloading & copying
+   ===================================================== */
 img {
+  /* Disable selection on all images */
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
-  pointer-events: none;
+  
+  /* Disable dragging */
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
-}
-
-/* Prevent text selection on entire page */
-body {
+  
+  /* Disable pointer events (prevents save image dialog) */
+  pointer-events: none;
+  
+  /* Disable touch callout on iOS */
   -webkit-touch-callout: none;
 }
 
-/* Style for protected image containers */
+/* =====================================================
+   2. BODY PROTECTION - Anti-copy measures
+   ===================================================== */
+body {
+  /* Disable touch callout on mobile */
+  -webkit-touch-callout: none;
+  
+  /* Prevent text selection site-wide (optional - can be removed if needed) */
+  /* -webkit-user-select: none; */
+  /* user-select: none; */
+}
+
+/* =====================================================
+   3. WATERMARK OVERLAY (Add to images via CSS)
+   ===================================================== */
+.watermarked {
+  position: relative;
+}
+
+.watermarked::after {
+  content: '© Jenish Studio';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* =====================================================
+   4. PROTECTED IMAGE CONTAINER
+   ===================================================== */
 .protected-image {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
-.protected-image::after {
+/* Invisible overlay to block right-click on images */
+.protected-image::before {
   content: '';
   position: absolute;
   top: 0;
@@ -33,15 +79,264 @@ body {
   bottom: 0;
   background: transparent;
   pointer-events: auto;
+  z-index: 5;
 }
 
-/* Allow pointer events on links and buttons */
-a, button, .btn, .nav-link, .navmenu, .portfolio-filters li, .scroll-top {
+/* =====================================================
+   5. ANTI-SCREENSHOT PROTECTION (CSS-based)
+   ===================================================== */
+@media print {
+  /* Hide all content when printing */
+  body {
+    display: none !important;
+  }
+  
+  /* Or blur images when printing */
+  img {
+    filter: blur(20px) !important;
+    opacity: 0.3 !important;
+  }
+}
+
+/* =====================================================
+   6. DISABLE SELECTION ON SENSITIVE ELEMENTS
+   ===================================================== */
+.no-select,
+.portfolio-img,
+.gallery-img,
+.hero-bg-image,
+.about-image {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* =====================================================
+   7. ALLOW POINTER EVENTS ON INTERACTIVE ELEMENTS
+   ===================================================== */
+a, 
+button, 
+.btn, 
+input,
+textarea,
+select,
+.nav-link, 
+.navmenu, 
+.navmenu a,
+.navmenu ul,
+.navmenu li,
+.portfolio-filters li, 
+.scroll-top,
+.mobile-nav-toggle,
+.glightbox,
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
   pointer-events: auto !important;
 }
 
-/* GLightbox images - allow viewing but not downloading */
+/* =====================================================
+   8. GLIGHTBOX PROTECTION - Gallery viewing
+   ===================================================== */
 .glightbox img,
-.gslide-image img {
+.gslide-image img,
+.gslide-media img {
   pointer-events: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+
+/* Add watermark to lightbox images */
+.gslide-media::after {
+  content: '© Jenish Studio';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* =====================================================
+   PROFESSIONAL SCROLL ANIMATIONS & TRANSITIONS
+   ===================================================== */
+
+/* Custom easing for AOS */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth section transitions */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero section fade animation for background images */
+.hero-bg-image {
+  animation: heroFadeIn 1.5s ease-out;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Section title underline animation */
+.section-title h2::after {
+  transition: width 0.6s ease-out;
+}
+
+.section-title[data-aos].aos-animate h2::after {
+  width: 50px;
+}
+
+/* Service cards hover lift effect */
+.team-member {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Portfolio items smooth hover */
+.portfolio-content {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portfolio-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Info items in contact section */
+.info-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA button pulse animation */
+.cta-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Testimonial slide smooth transitions */
+.swiper-slide {
+  transition: opacity 0.5s ease;
+}
+
+/* Footer link hover animations */
+.footer-links a {
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  transform: translateX(5px);
+}
+
+/* Social icons hover bounce */
+.social-links a {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Smooth scroll behavior enhancement */
+html {
+  scroll-behavior: smooth;
+}
+
+/* About image subtle zoom on scroll */
+.about-image {
+  transition: transform 0.6s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.02);
+}
+
+/* Map iframe smooth entrance */
+iframe {
+  transition: opacity 0.5s ease;
+}
+
+/* Form input focus animations */
+.php-email-form input,
+.php-email-form textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.php-email-form input:focus,
+.php-email-form textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 196, 81, 0.2);
+}
+
+/* Submit button animation */
+.php-email-form button[type="submit"] {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.php-email-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 196, 81, 0.4);
+}
+
+/* Checkmark items fade in stagger */
+.d-flex.align-items-center {
+  transition: transform 0.3s ease;
+}
+
+.d-flex.align-items-center:hover {
+  transform: translateX(5px);
+}
+
+/* Navigation link hover effect */
+.navmenu a {
+  position: relative;
 }

@@ -138,29 +138,50 @@
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    let initIsotope = null;
+    let container = isotopeItem.querySelector('.isotope-container');
+    
+    imagesLoaded(container, function() {
+      initIsotope = new Isotope(container, {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
-        sortBy: sort
+        sortBy: sort,
+        transitionDuration: '0.4s'
+      });
+
+      // Set up filter click handlers after isotope is initialized
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filterBtn) {
+        filterBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          if (!initIsotope) return;
+          
+          // Update active class
+          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          this.classList.add('filter-active');
+          
+          // Get filter value
+          let filterValue = this.getAttribute('data-filter');
+          
+          // Apply filter
+          initIsotope.arrange({
+            filter: filterValue
+          });
+          
+          // Force layout after a brief delay
+          setTimeout(function() {
+            if (initIsotope) {
+              initIsotope.layout();
+            }
+          }, 50);
+          
+          if (typeof aosInit === 'function') {
+            aosInit();
+          }
+        });
       });
     });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
   });
 
   /**
