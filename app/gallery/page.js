@@ -1,4 +1,5 @@
 import Script from "next/script";
+import GalleryClient from "./GalleryClient";
 
 export default function Gallery() {
   // Define image categories based on actual folder structure with proper naming
@@ -117,48 +118,7 @@ export default function Gallery() {
               data-layout="masonry"
               data-sort="original-order"
             >
-              <ul
-                className="portfolio-filters isotope-filters"
-                data-aos="fade-up"
-                data-aos-delay="100"
-                data-aos-duration="600"
-              >
-                <li data-filter="*" className="filter-active">
-                  All
-                </li>
-                <li data-filter=".filter-baby">Baby</li>
-                <li data-filter=".filter-family">Family</li>
-                <li data-filter=".filter-festival">Festival</li>
-                <li data-filter=".filter-kids">Kids</li>
-                <li data-filter=".filter-model">Model</li>
-                <li data-filter=".filter-product">Product</li>
-                <li data-filter=".filter-wedding">Wedding</li>
-              </ul>
-              <div className="row gy-4 isotope-container">
-                {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`col-lg-4 col-md-6 portfolio-item isotope-item ${image.filter}`}
-                    data-aos="fade-up"
-                    data-aos-delay={100 + (index % 6) * 50}
-                    data-aos-duration="600"
-                  >
-                    <div className="portfolio-content h-100">
-                      <a
-                        href={image.src}
-                        data-gallery="gallery"
-                        className="glightbox"
-                      >
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="img-fluid"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <GalleryClient images={images} />
             </div>
           </div>
         </section>

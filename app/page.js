@@ -517,8 +517,6 @@ export default function Home() {
         <section id="portfolio" className="portfolio section">
           <div
             className="container section-title"
-            data-aos="fade-up"
-            data-aos-duration="800"
           >
             <h2>Portfolio</h2>
             <p>Timeless stories crafted in every frame.</p>
@@ -531,9 +529,6 @@ export default function Home() {
             >
               <ul
                 className="portfolio-filters isotope-filters"
-                data-aos="fade-up"
-                data-aos-delay="100"
-                data-aos-duration="600"
               >
                 <li data-filter="*" className="filter-active">
                   All
@@ -546,9 +541,6 @@ export default function Home() {
               <div className="row gy-4 isotope-container">
                 <div
                   className="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  data-aos-duration="600"
                 >
                   <div className="portfolio-content h-100">
                     <img
@@ -579,9 +571,6 @@ export default function Home() {
                 </div>
                 <div
                   className="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  data-aos-duration="600"
                 >
                   <div className="portfolio-content h-100">
                     <img
@@ -612,9 +601,6 @@ export default function Home() {
                 </div>
                 <div
                   className="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  data-aos-duration="600"
                 >
                   <div className="portfolio-content h-100">
                     <img
@@ -645,9 +631,6 @@ export default function Home() {
                 </div>
                 <div
                   className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  data-aos-duration="600"
                 >
                   <div className="portfolio-content h-100">
                     <img
@@ -678,9 +661,6 @@ export default function Home() {
                 </div>
                 <div
                   className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  data-aos-duration="600"
                 >
                   <div className="portfolio-content h-100">
                     <img
@@ -711,9 +691,6 @@ export default function Home() {
                 </div>
                 <div
                   className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  data-aos-duration="600"
                 >
                   <div className="portfolio-content h-100">
                     <img
