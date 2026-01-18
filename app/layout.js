@@ -1,4 +1,5 @@
 import './globals.css'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import ImageProtection from './components/ImageProtection'
 
 /**
@@ -110,6 +111,9 @@ export default function RootLayout({ children }) {
         
         {/* Page content */}
         {children}
+        
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   )
